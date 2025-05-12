@@ -46,7 +46,9 @@ class GrahamScan(
     private fun convexHull(sortedPoints: List<Point>, initial: Point): List<Point> {
         // Lista de puntos que forman el convex, agregando al principio nuestro
         // punto inicial y el primer punto en nuestra lista de puntos ordenados por ángulo
-        val convex = mutableListOf(initial, sortedPoints.first())
+        val convex = mutableListOf(initial)
+        grapher.draw(sortedPoints, convex, initial)
+        convex.add(sortedPoints.first())
         grapher.draw(sortedPoints, convex, initial)
 
         // Recorremos cada uno de los puntos, descartando el primero, ya que ya fue agregado
