@@ -19,9 +19,9 @@ fun main() {
     wrapper.displayChart()
 
     val convexHull = GrahamScan(
-        dataSet1,
+        dataSet3(),
         Grapher(
-            chart, wrapper, 600
+            chart, wrapper, 800
         ),
     ).operate()
 

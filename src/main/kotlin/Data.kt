@@ -1,5 +1,7 @@
 package me.pblinux
 
+import kotlin.random.Random
+
 val dataSet1 = listOf(
     Point(1.2, 3.5), Point(2.8, 2.3), Point(0.5, 1.1), Point(3.9, 0.7),
     Point(1.0, 1.0), Point(4.2, 2.9), Point(2.2, 4.4), Point(3.1, 3.8),
@@ -18,3 +20,16 @@ val dataSet2 = listOf(
     Point(3.0, 6.0), Point(1.0, 5.0), Point(4.0, 0.0), Point(5.0, 5.0),
     Point(2.0, 4.0), Point(0.0, 4.0)
 )
+
+fun dataSet3(): List<Point> {
+    val list = mutableListOf<Point>()
+
+    for (i in 1..50) {
+        val randomX = Random.nextDouble()
+        val randomY = Random.nextDouble()
+
+        val point = Point(randomX, randomY)
+        list.add(point)
+    }
+    return list
+}
